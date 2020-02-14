@@ -116,3 +116,7 @@ dmypy.json
 
 # idea
 .idea/
+
+# dl model
+*/*KNNBaseline_Item_Recommand.model
+*/*popular_music_suprise_format*.txt
