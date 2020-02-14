@@ -17,7 +17,8 @@ def demo():
 
 def formatRes(textList):
   if not textList:
-    return '<p>未得到无结果</p>'
+    print('没有这首歌的内部id')
+    return '<p>没有这首歌的内部id，再看看其他歌吧~</p>'
   else:
     return '<p/>'.join(textList)
 
