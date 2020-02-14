@@ -101,16 +101,16 @@ def predict(song_name):
     # to_raw_uid映射回去
     song_list_neighbors = (algo.trainset.to_raw_iid(inner_id)
                            for inner_id in song_list_neighbors)
-    song_list_neighbors = (song_id_name_dic[song_id]
+    song_list_neighbors = list(song_id_name_dic[song_id]
                            for song_id in song_list_neighbors)
-
+    song_list_neighbors.insert(0,"和歌曲 《"+song_name+"》 最接近的10个歌曲为：")
     print()
     print("和歌曲 《", song_name, "》 最接近的10个歌曲为：\n")
     result = "和歌曲 《"+song_name+"》 最接近的10个歌曲为：\n"
     for song_name in song_list_neighbors:
         print(song_name)
-        result += song_name+"   "
-    return result
+        result += song_name
+    return song_list_neighbors
 
 if __name__ == '__main__':
     # data_preprocess()
@@ -122,7 +122,7 @@ if __name__ == '__main__':
 
     # result = predict("本草纲目")
     # predict(result)
-    split_file("./data/popular_music_suprise_format.txt","./data/popular_music_suprise_format1.txt",0.2)
+    split_file("./data/popular_music_suprise_format.txt","./data/popular_music_suprise_format1.txt",0.09)
     train()
 
 
