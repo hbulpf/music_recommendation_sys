@@ -11,8 +11,8 @@
 
 | 组件            | 版本 |
 | --------------- | ---- |
-| scikit-surprise |      |
-| gensim          |      |
+| scikit-surprise |  1.1.0    |
+| gensim          |  3.8.1    |
 | tensorfow       |      |
 
 
