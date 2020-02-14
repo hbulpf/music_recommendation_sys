@@ -91,8 +91,14 @@ def predict(song_name):
     song_id = song_name_id_dic[song_name]
     print("歌曲id", song_id)
     # 取出来对应的内部item id => to_inner_iid
-    song_inner_id = algo.trainset.to_inner_iid(song_id)
-    print("歌曲内部id", song_inner_id)
+    try:
+        song_inner_id = algo.trainset.to_inner_iid(song_id)
+    except ValueError:
+        print("查找内部歌曲id发生异常:",ValueError.__name__)
+        song_list_neighbors = []
+        return
+    else:
+        print("歌曲内部id", song_inner_id)
 
     song_list_neighbors = algo.get_neighbors(song_inner_id, k=10)
 
