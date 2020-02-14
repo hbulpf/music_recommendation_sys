@@ -1,0 +1,39 @@
+<html>
+<body>
+<head>
+    <title>音乐推荐</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+</head>
+
+<style>
+    .query{font-size:20px}
+    .result{font-size:20px;margin:0 auto;line-height: 10px;}
+</style>
+
+<h1 align="center">音乐推荐</h1>
+<form method="post" action="/">
+    <table>
+        <td>
+            <p> 发送 </p>
+        </td>
+        <td>
+            <textarea type="text" class="query" name="input_text" id="input_text" value="" style="width:1000px;height:40px" onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">{{input_text}}</textarea>
+        <input type="submit" for="input_text" value="提交">
+        </td>
+    </table>
+
+    <table>
+        <td>
+            <p> 返回 </p>
+        </td>
+        <td>
+            <div type="text" class="result" name="res_text" id="res_text" value="" style="width:1000px;height:500px;overflow-y:auto;border-style:solid; border-width:1px; border-color:#000">{{res_text}}</div>
+        </td>
+    </table>
+    <script>
+    var textarea = document.getElementById('res_text');
+    textarea.scrollTop = textarea.scrollHeight;
+    </script>
+</form>
+</body>
+</html>
