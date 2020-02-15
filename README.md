@@ -24,6 +24,13 @@
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask
 ```
 
+生成推荐模型
+
+```shell script
+python model.py
+```
+
+
 启动程序
 
 ```shell script

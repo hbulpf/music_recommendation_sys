@@ -44,7 +44,6 @@ def parse_file(in_file, out_playlist, out_song):
 
 
 def data_preprocess():
-
     playlist_id_name_dic_file = "./data/playlist_id_name_dict.pkl"
     song_id_name_dic_file = "./data/song_id_name_dic.pkl"
     input_file = "./data/popular.playlist"
