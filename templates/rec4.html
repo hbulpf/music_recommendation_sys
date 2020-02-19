@@ -19,27 +19,27 @@
    </div>
    <div class="box">
     <ul class="left">
-     <li class="active"><a href="index.html">相似的歌</a></li>
+     <li><a href="index.html">相似的歌</a></li>
      <li><a href="rec2.html">相似的歌单</a></li>
      <li><a href="rec3.html">和我相似的TA</a></li>
-     <li class="last"><a href="rec4.html">感兴趣的歌</a></li>
+     <li class="active last"><a href="rec4.html">感兴趣的歌</a></li>
     </ul>
     <div class="content">
-     <h1 align="center" style="margin: 10px;font-size:25px">相似的歌</h1>
+     <h1 align="center" style="margin: 10px;font-size:25px">感兴趣的歌</h1>
      <div class="table clearfix">
       <form method="post" action="/" id="feedbackForm">
        <div class="form feedbackform">
         <div class="tip">
-         请输入歌曲名
+         请输入用户id
         </div>
         <div class="row">
-         <label class="label">歌曲名</label>
+         <label class="label">用户id</label>
          <input type="text" id="input_text" class="text text-error gray" autocomplete="off" name="input_text" value="{{input_text}}" style="width: 60%" onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }" />
-         <span id="err_ctitle" class="msg-error">请输入歌曲名</span>
+         <span id="err_ctitle" class="msg-error">请输入用户id</span>
          <input type="submit" value="提交" name="confirmsubmit" class="button" />
         </div>
         <div class="row">
-         <label class="label">相似的歌</label>
+         <label class="label">感兴趣的歌</label>
          <div type="text" name="res_text" id="res_text" style="color: rgb(153, 153, 153);border-style:solid; border-width:1px; width: 80%">
           {{res_text}}
          </div>
