@@ -46,6 +46,8 @@ def recommendation4():
 
 
 def formatRes(textList):
+  if textList == '数据库还没有收录这首歌':
+    return '<br/>'.join(textList)
   if not textList:
     print('没有这首歌的内部id')
     return '<p>没有这首歌的内部id，再看看其他歌吧~</p>'
@@ -56,7 +58,7 @@ def formatRes(textList):
           htmltxt = htmltxt + '<p/>' + textList[i]
         else:
           htmltxt = htmltxt + '<p/>' + str(i) + '. ' + textList[i]
-    # return '<p/>'.join(textList)
     return htmltxt
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port='5000')
