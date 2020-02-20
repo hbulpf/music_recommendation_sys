@@ -50,7 +50,13 @@ def formatRes(textList):
     print('没有这首歌的内部id')
     return '<p>没有这首歌的内部id，再看看其他歌吧~</p>'
   else:
-    return '<p/>'.join(textList)
-
+    htmltxt = ""
+    for i in range(len(textList)):
+        if i == 0:
+          htmltxt = htmltxt + '<p/>' + textList[i]
+        else:
+          htmltxt = htmltxt + '<p/>' + str(i) + '. ' + textList[i]
+    # return '<p/>'.join(textList)
+    return htmltxt
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port='5000')
