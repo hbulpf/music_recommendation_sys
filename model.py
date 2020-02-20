@@ -86,11 +86,11 @@ def train_baseon_item():
     pickle.dump(new_song_id_name_dic,open(path + "song_id_name_dic.pkl", "wb"))
     f2.close()
 
-def train_baseon_user():
+def train_baseon_playlist():
     # 数据预处理
     data_preprocess()
     path = "./data/"
-    file_path = os.path.expanduser(path + "popular_music_suprise_format1.txt")
+    file_path = os.path.expanduser(path + "popular_music_suprise_format.txt")
     # 指定文件格式
     reader = Reader(line_format='user item rating timestamp', sep=',')
     # 从文件读取数据
@@ -105,7 +105,7 @@ def train_baseon_user():
     algo = KNNBaseline(sim_options=sim_options)
 
     algo.fit(trainset)
-    surprise.dump.dump(path + 'KNNBaseline_User_Recommand.model', algo=algo)
+    surprise.dump.dump(path + 'KNNBaseline_Playlist_Recommand.model', algo=algo)
     # 保证数据一致性
     # 重建歌单id到歌单名的映射字典
     f1 = open(path + "playlist_id_name_dic.pkl", "rb")
@@ -171,8 +171,8 @@ def predict_baseon_playlist(playlist_name):
     playlist_name_id_dic = {}
     for playlist_id in playlist_id_name_dic:
         playlist_name_id_dic[playlist_id_name_dic[playlist_id]] = playlist_id
-    if playlist_name not in playlist_name_id_dic.keys():
-        return "数据库还没有收录这首歌"
+    # if playlist_name not in playlist_name_id_dic.keys():
+    #     return "数据库还没有收录这首歌"
 
     _, algo = surprise.dump.load(path + '/KNNBaseline_Playlist_Recommand.model')
     # 取出近邻
@@ -198,7 +198,7 @@ def predict_baseon_playlist(playlist_name):
                                for playlist_id in playlist_list_neighbors)
     playlist_list_neighbors.insert(0, "和歌单 《" + playlist_name + "》 最接近的10个歌曲为：")
     print()
-    print("和歌曲 《", playlist_name, "》 最接近的10个歌曲为：\n")
+    print("和歌单 《", playlist_name, "》 最接近的10个歌单为：\n")
     for song_name in playlist_list_neighbors:
         print(song_name)
     return playlist_list_neighbors
@@ -209,11 +209,19 @@ if __name__ == '__main__':
     # key = list(song_id_name_dic.keys())[6]
     # print(song_id_name_dic[key])
     # file.close()
+    # data_preprocess()
+    # file = open("./data/playlist_id_name_dic.pkl",'rb')
+    # playlist_id_name_dic = pickle.load(file)
+    # keys = list(playlist_id_name_dic.keys())[:30]
+    # for key in keys:
+    #     print(playlist_id_name_dic[key])
+    # file.close()
+    predict_baseon_playlist("中国好声音第四季原唱")
 
     # result = predict("本草纲目")
     # predict(result)
-    split_file("./data/popular_music_suprise_format.txt","./data/popular_music_suprise_format1.txt",0.08)
-    train_baseon_item()
-    train_baseon_user()
+    # split_file("./data/popular_music_suprise_format.txt","./data/popular_music_suprise_format1.txt",0.08)
+    # train_baseon_item()
+    # train_baseon_playlist()
 
 

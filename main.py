@@ -1,6 +1,6 @@
 import os
 from flask import Flask, request, render_template, Markup
-from model import predict
+from model import predict_baseon_item,predict_baseon_playlist
 
 app = Flask(__name__)
 
@@ -11,7 +11,7 @@ def recommendation1():
     return render_template('index.html', input_text ='', res_text ='')
   else:
     inputText = request.form.get("input_text")
-    result_list = predict(str(inputText))
+    result_list = predict_baseon_item(str(inputText))
     result_text = Markup(formatRes(result_list))
     return render_template('index.html', input_text = inputText, res_text = result_text)
 
@@ -21,7 +21,8 @@ def recommendation2():
     return render_template('rec2.html', input_text = '', res_text = '')
   else:
     inputText = request.form.get("input_text")
-    result_text = predict(str(inputText))
+    result_list = predict_baseon_playlist(str(inputText))
+    result_text = Markup(formatRes(result_list))
     return render_template('rec2.html', input_text = inputText, res_text = result_text)
 
 @app.route('/rec3.html', methods=['GET', 'POST'])
@@ -30,9 +31,9 @@ def recommendation3():
     return render_template('rec3.html', input_text = '', res_text = '')
   else:
     inputText = request.form.get("input_text")
-    result_list = predict(str(inputText))
-    result_text = Markup(formatRes(result_list))
-    return render_template('rec3.html', input_text = inputText, res_text = result_text)
+    # result_list = predict(str(inputText))
+    # result_text = Markup(formatRes(result_list))
+    return render_template('rec3.html', input_text = inputText, res_text = "该功能暂时未开放")
 
 @app.route('/rec4.html', methods=['GET', 'POST'])
 def recommendation4():
@@ -40,9 +41,9 @@ def recommendation4():
     return render_template('rec4.html', input_text = '', res_text = '')
   else:
     inputText = request.form.get("input_text")
-    result_list = predict(str(inputText))
-    result_text = Markup(formatRes(result_list))
-    return render_template('rec4.html', input_text = inputText, res_text = result_text)
+    # result_list = predict(str(inputText))
+    # result_text = Markup(formatRes(result_list))
+    return render_template('rec4.html', input_text = inputText, res_text = "该功能暂时未开放")
 
 
 def formatRes(textList):
