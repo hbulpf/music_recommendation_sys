@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 import os
 from flask import Flask, request, render_template, Markup
 from model import predict_baseon_item,predict_baseon_playlist

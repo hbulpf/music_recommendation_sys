@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 import os
 import pickle
 import surprise
@@ -35,7 +38,7 @@ def parse_file(in_file, out_playlist, out_song):
     playlist_dic = {}
     #从歌曲id到歌曲名称的映射字典
     song_dic = {}
-    for line in open(in_file):
+    for line in open(in_file,'r',encoding='UTF-8'):
         parse_playlist_get_info(line, playlist_dic, song_dic)
     #把映射字典保存在二进制文件中
     pickle.dump(playlist_dic, open(out_playlist,"wb"))
@@ -216,7 +219,7 @@ if __name__ == '__main__':
     # for key in keys:
     #     print(playlist_id_name_dic[key])
     # file.close()
-    predict_baseon_playlist("中国好声音第四季原唱")
+    # predict_baseon_playlist("中国好声音第四季原唱")
 
     # result = predict("本草纲目")
     # predict(result)
