@@ -52,6 +52,8 @@ def data_preprocess():
     print("已保存字典「歌单ID-歌单名称」、字典「歌曲ID-歌曲名称」")
 
 def train():
+    #数据预处理
+    data_preprocess()
     path = "./data/"
     file_path = os.path.expanduser(path + "popular_music_suprise_format1.txt")
     # 指定文件格式
@@ -70,6 +72,19 @@ def train():
 
     algo.fit(trainset)
     surprise.dump.dump(path+'KNNBaseline_Item_Recommand.model', algo=algo)
+    #保证数据一致性
+    # 重建歌曲id到歌曲名的映射字典
+    f1 = open(path + "song_id_name_dic.pkl", "rb")
+    song_id_name_dic = pickle.load(f1)
+    f1.close()
+    f2 = open(path + "popular_music_suprise_format1.txt")
+    context = f2.readlines()
+    new_song_id_name_dic = {}
+    for line in context:
+        playlist_id,song_id,rating,time = line.split(',')
+        new_song_id_name_dic[song_id] = song_id_name_dic[song_id]
+    pickle.dump(new_song_id_name_dic,open(path + "song_id_name_dic.pkl", "wb"))
+    f2.close()
 
 
 def predict(song_name):
