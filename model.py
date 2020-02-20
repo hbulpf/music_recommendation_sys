@@ -220,8 +220,8 @@ if __name__ == '__main__':
 
     # result = predict("本草纲目")
     # predict(result)
-    # split_file("./data/popular_music_suprise_format.txt","./data/popular_music_suprise_format1.txt",0.08)
-    # train_baseon_item()
-    # train_baseon_playlist()
+    split_file("./data/popular_music_suprise_format.txt","./data/popular_music_suprise_format1.txt",0.08)
+    train_baseon_item()
+    train_baseon_playlist()
 
 
