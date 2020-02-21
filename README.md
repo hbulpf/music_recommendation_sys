@@ -17,8 +17,9 @@
 
 可以按照[环境配置文档](doc/environments.md)建立运行环境。
 
-#### 安装与启动
+## 使用说明
 
+### 启动程序
 安装 python flask
 
 ```shell script
@@ -41,7 +42,11 @@ python main.py
 查看 http://localhost:5000/ 访问音乐推荐系统。
 
 
-## 使用说明
+### 作为服务启动
+
+```shell script
+sh service.sh
+```
 
 # 软件架构
 
