@@ -11,5 +11,3 @@ then
   echo 'start service...'
   nohup python main.py > music.log &
 end
-
-
