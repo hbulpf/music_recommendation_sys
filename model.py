@@ -205,26 +205,26 @@ def predict_baseon_playlist(playlist_name):
     for song_name in playlist_list_neighbors:
         print(song_name)
     return playlist_list_neighbors
-if __name__ == '__main__':
-    # data_preprocess()
-    # file = open("./data/song_id_name_dic.pkl",'rb')
-    # song_id_name_dic = pickle.load(file)
-    # key = list(song_id_name_dic.keys())[6]
-    # print(song_id_name_dic[key])
-    # file.close()
-    # data_preprocess()
-    # file = open("./data/playlist_id_name_dic.pkl",'rb')
-    # playlist_id_name_dic = pickle.load(file)
-    # keys = list(playlist_id_name_dic.keys())[:30]
-    # for key in keys:
-    #     print(playlist_id_name_dic[key])
-    # file.close()
-    # predict_baseon_playlist("中国好声音第四季原唱")
-
-    # result = predict("本草纲目")
-    # predict(result)
-    split_file("./data/popular_music_suprise_format.txt","./data/popular_music_suprise_format1.txt",0.08)
-    train_baseon_item()
-    train_baseon_playlist()
+# if __name__ == '__main__':
+#     # data_preprocess()
+#     # file = open("./data/song_id_name_dic.pkl",'rb')
+#     # song_id_name_dic = pickle.load(file)
+#     # key = list(song_id_name_dic.keys())[6]
+#     # print(song_id_name_dic[key])
+#     # file.close()
+#     # data_preprocess()
+#     # file = open("./data/playlist_id_name_dic.pkl",'rb')
+#     # playlist_id_name_dic = pickle.load(file)
+#     # keys = list(playlist_id_name_dic.keys())[:30]
+#     # for key in keys:
+#     #     print(playlist_id_name_dic[key])
+#     # file.close()
+#     # predict_baseon_playlist("中国好声音第四季原唱")
+# 
+#     # result = predict("本草纲目")
+#     # predict(result)
+#     split_file("./data/popular_music_suprise_format.txt","./data/popular_music_suprise_format1.txt",0.08)
+#     train_baseon_item()
+#     train_baseon_playlist()
 
 
