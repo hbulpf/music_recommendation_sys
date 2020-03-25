@@ -53,7 +53,20 @@ sh service.sh
 
 
 # 参考
+
 1. [Python Flask 快速部署网页](https://www.jianshu.com/p/c8b321087eca)
 2. [Python Flask Web 框架入门](https://blog.csdn.net/sinat_38682860/article/details/82354342)
 2. [Flask 快速入门](http://docs.jinkan.org/docs/flask/quickstart.html#a-minimal-application)
 3. [基于python-flask搭建后台](https://blog.csdn.net/WinerChopin/article/details/81060230)
+
+
+
+----------------------------------------
+
+**项目规范**
+
+本文使用 [`Markdown`](https://www.markdownguide.org/basic-syntax) 编写, 排版符合[`中文技术文档写作规范`](https://github.com/hbulpf/document-style-guide)。Find Me On [**Github**](https://github.com/hbulpf/music_recommendation_sys) , [**Gitee**](https://gitee.com/hecloudAi/music_recommendation_sys)
+
+**友情贡献**
+
+@[**RunAtWorld**](http://www.github.com/RunAtWorld)  &nbsp;
