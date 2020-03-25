@@ -1,7 +1,10 @@
-**音乐推荐系统**
+# 音乐推荐系统
 
-# 介绍
-**音乐推荐系统**
+[![知识共享协议（CC协议）](https://img.shields.io/badge/License-Creative%20Commons-DC3D24.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+[![GitHub stars](https://img.shields.io/github/stars/hbulpf/music_recommendation_sys.svg?label=Stars)](https://github.com/hbulpf/music_recommendation_sys)
+[![GitHub watchers](https://img.shields.io/github/watchers/hbulpf/music_recommendation_sys.svg?label=Watchers)](https://github.com/hbulpf/music_recommendation_sys/watchers)
+[![GitHub forks](https://img.shields.io/github/forks/hbulpf/music_recommendation_sys.svg?label=Forks)](https://github.com/hbulpf/music_recommendation_sys/fork)
+
 
 # 安装与使用
 
